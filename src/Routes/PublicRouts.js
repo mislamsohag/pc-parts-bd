@@ -3,8 +3,8 @@
 import About from '../Pages/About';
 import Home from '../Pages/Home';
 import Reviews from '../Pages/Reviews';
-import Blogs from '../Pages/Blogs';
-import Login from '../Pages/Login';
+import Login from '../Authentication/Login';
+import Blogs from './../Pages/Blogs';
 
 export const publicRoute = [
 
