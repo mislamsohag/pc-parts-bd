@@ -6,7 +6,7 @@ import Reviews from '../Pages/Reviews';
 import Login from '../Authentication/Login';
 import Blogs from './../Pages/Blogs';
 
-export const publicRoute = [
+export const publicRoutes = [
 
     { path: '/', name: 'Home', Component: Home },
     { path: '/home', name: 'Home', Component: Home },

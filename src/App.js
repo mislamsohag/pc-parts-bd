@@ -1,8 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import { publicRoute } from './Routes/PublicRouts';
 import Navbar from './Componants/Navbar';
 import RequireAuth from './Authentication/RequireAuth';
-import { privateRoute } from './Routes/privateRoute';
+import { privateRoutes } from './Routes/privateRoutes';
+import { publicRoutes } from './Routes/PublicRouts';
+import RequireAdmin from './Authentication/RequireAdmin';
+import { adminRoutes } from './Routes/adminRoutes';
 
 
 
@@ -14,12 +16,18 @@ function App() {
         <div className='max-w-7xl mx-auto px-12'>
           <Routes>
             {
-              publicRoute.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+              publicRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
             }
 
             <Route element={<RequireAuth />}>
               {
-                privateRoute.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+                privateRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+              }
+            </Route>
+
+            <Route element={<RequireAdmin />}>
+              {
+                adminRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
               }
             </Route>
           </Routes>
