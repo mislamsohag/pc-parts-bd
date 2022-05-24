@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = ({ children }) => {
     const manuItems = <>
-        <li><Link to={'home'}>Home</Link></li>
-        <li><Link to={'about'}>About</Link></li>
-        <li><Link to={'reviews'}>Reviews</Link></li>
-        <li><Link to={'blogs'}>Blogs</Link></li>
-        <li><Link to={'login'}>Login</Link></li>
-
+        <li><NavLink className={'rounded-md'} to={'home'}>Home</NavLink></li>
+        <li><NavLink className={'rounded-md'} to={'about'}>About</NavLink></li>
+        <li><NavLink className={'rounded-md'} to={'reviews'}>Reviews</NavLink></li>
+        <li><NavLink className={'rounded-md'} to={'blogs'}>Blogs</NavLink></li>
+        <li><NavLink className={'rounded-md'} to={'login'}>Login</NavLink></li>
     </>
     return (
         <div>
@@ -17,7 +16,7 @@ const Navbar = ({ children }) => {
                 <div className="drawer-content flex flex-col">
                     {/* <!-- Navbar --> */}
                     <div className="w-full navbar bg-base-300 px-20">
-                        <div className="flex-1 px-2 mx-2">PC PARTS BD</div>
+                        <Link to='/' className="flex-1 px-2 mx-2">PC PARTS BD</Link>
                         <div className="flex-none lg:hidden">
                             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -25,7 +24,7 @@ const Navbar = ({ children }) => {
                         </div>
 
                         <div className="flex-none hidden lg:block">
-                            <ul className="menu menu-horizontal">
+                            <ul className="menu menu-horizontal gap-2">
                                 {/* <!-- Navbar menu content here --> */}
                                 {manuItems}
                             </ul>
@@ -36,7 +35,7 @@ const Navbar = ({ children }) => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+                    <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 gap-2">
                         {/* <!-- Sidebar content here --> */}
                         {manuItems}
                     </ul>
