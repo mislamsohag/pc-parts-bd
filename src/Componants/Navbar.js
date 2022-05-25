@@ -9,6 +9,7 @@ const Navbar = ({ children }) => {
 
     const manuItems = <>
         <li><NavLink className={'rounded-md'} to={'home'}>Home</NavLink></li>
+        <li><NavLink className={'rounded-md'} to={'products'}>Products</NavLink></li>
         <li><NavLink className={'rounded-md'} to={'about'}>About</NavLink></li>
         <NavLink to={'reviews'} className={"dropdown dropdown-hover dropdown-end rounded-md"}>
             <label tabIndex={"0"} className={"btn btn-primary"}>Reviews</label>
