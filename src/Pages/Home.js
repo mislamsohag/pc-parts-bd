@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../Componants/Slider';
 import { Link } from 'react-router-dom';
+import Footer from '../Componants/Footer';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

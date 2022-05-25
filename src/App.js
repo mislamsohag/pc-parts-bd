@@ -6,6 +6,7 @@ import { publicRoutes } from './Routes/PublicRouts';
 import RequireAdmin from './Authentication/RequireAdmin';
 import { adminRoutes } from './Routes/adminRoutes';
 import Dashboard from './Dashboard/Dashboard';
+import Footer from './Componants/Footer';
 
 
 
@@ -34,6 +35,7 @@ function App() {
           </Route>
         </Routes>
       </Navbar>
+
     </>
   );
 }
