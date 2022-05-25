@@ -6,6 +6,7 @@ import Reviews from '../Pages/Reviews';
 import Login from '../Authentication/Login';
 import Blogs from './../Pages/Blogs';
 import Products from '../Pages/Products/Products';
+import SignUp from './../Authentication/SignUp';
 
 export const publicRoutes = [
 
@@ -16,4 +17,5 @@ export const publicRoutes = [
     { path: '/review', name: 'Reviews', Component: Reviews },
     { path: '/blogs', name: 'Blogs', Component: Blogs },
     { path: '/login', name: 'Login', Component: Login },
+    { path: '/signup', name: 'signUp', Component: SignUp },
 ];

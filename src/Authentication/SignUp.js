@@ -1,10 +1,13 @@
 import React from 'react';
-import auth from '../../firebase.init';
+
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import Loading from '../../Sheard/Loading';
+
 import { Link, useNavigate } from 'react-router-dom';
-import useToken from '../../Hooks/useToken';
+import auth from '../firebase.init';
+import useToken from '../Hooks/useToken';
+import Loading from './../Componants/Loading';
+
 
 const SignUp = () => {
 
