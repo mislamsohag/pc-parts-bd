@@ -13,25 +13,23 @@ function App() {
   return (
     <>
       <Navbar>
-        <div className='max-w-7xl mx-auto px-12'>
-          <Routes>
+        <Routes>
+          {
+            publicRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+          }
+
+          <Route element={<RequireAuth />}>
             {
-              publicRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+              privateRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
             }
+          </Route>
 
-            <Route element={<RequireAuth />}>
-              {
-                privateRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
-              }
-            </Route>
-
-            <Route element={<RequireAdmin />}>
-              {
-                adminRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
-              }
-            </Route>
-          </Routes>
-        </div>
+          <Route element={<RequireAdmin />}>
+            {
+              adminRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+            }
+          </Route>
+        </Routes>
       </Navbar>
     </>
   );
