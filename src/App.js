@@ -5,6 +5,7 @@ import { privateRoutes } from './Routes/privateRoutes';
 import { publicRoutes } from './Routes/PublicRouts';
 import RequireAdmin from './Authentication/RequireAdmin';
 import { adminRoutes } from './Routes/adminRoutes';
+import Dashboard from './Dashboard/Dashboard';
 
 
 
@@ -25,9 +26,11 @@ function App() {
           </Route>
 
           <Route element={<RequireAdmin />}>
-            {
-              adminRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
-            }
+            <Route path='/dashboard' element={<Dashboard />}>
+              {
+                adminRoutes.map(({ path, Component }, index) => (<Route key={index} path={path} element={<Component />} />))
+              }
+            </Route>
           </Route>
         </Routes>
       </Navbar>

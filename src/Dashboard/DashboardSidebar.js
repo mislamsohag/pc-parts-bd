@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import useAdmin from '../Hooks/useAdmin';
 
 const DashboardSidebar = ({ children }) => {
@@ -21,10 +21,10 @@ const DashboardSidebar = ({ children }) => {
                     htmlFor="my-drawer-2"
                     className="drawer-overlay">
                 </label>
-                <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
+                <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content gap-2">
                     {/* <!-- Sidebar content here --> */}
-                    <li><Link to="/dashboard/addAdmin">Add Admin</Link></li>
-                    <li><Link to="/dashboard/addProduct">Add Product</Link></li>
+                    <li><NavLink to="/dashboard/addAdmin">Add Admin</NavLink></li>
+                    <li><NavLink to="/dashboard/addProduct">Add Product</NavLink></li>
 
                 </ul>
 
