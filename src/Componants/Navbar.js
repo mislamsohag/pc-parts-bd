@@ -1,26 +1,47 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import useAdmin from './../Hooks/useAdmin';
+import auth from '../firebase.init';
+// import useAdmin from './../Hooks/useAdmin';
 
 const Navbar = ({ children }) => {
+    const [user] = useAuthState(auth);
     const [dark, setDark] = useState(false);
     const { pathname } = useLocation();
-    const [admin] = useAdmin();
+    // const [admin] = useAdmin();
+
+    const logout = () => {
+        signOut(auth);
+        //এর মাধ্যমে লোকাল স্টোরেজ থেকে তথ্য মুছে ফেলা
+        localStorage.removeItem('accessToken');
+
+    };
 
     const manuItems = <>
         <li><NavLink className={'rounded-md'} to={'home'}>Home</NavLink></li>
         <li><NavLink className={'rounded-md'} to={'products'}>Products</NavLink></li>
         <li><NavLink className={'rounded-md'} to={'about'}>About</NavLink></li>
-        <NavLink to={'reviews'} className={"dropdown dropdown-hover dropdown-end rounded-md"}>
-            <label tabIndex={"0"} className={"btn btn-primary"}>Reviews</label>
-            <ul tabIndex={"0"} className={"dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"}>
-                <li><NavLink to={'/reviews'}>Reviews</NavLink></li>
-                <li><NavLink to={'/reviews'}>My Review</NavLink></li>
-            </ul>
-        </NavLink>
+        <li>
+            <NavLink to={'reviews'} className={"dropdown dropdown-hover dropdown-end rounded-md"}>
+                <label tabIndex={"0"} >Reviews</label>
+                <ul tabIndex={"0"} className={"dropdown-content gap-2 menu shadow bg-base-100 rounded-lg w-52"}>
+                    <li><NavLink to={'/reviews'}>Reviews</NavLink></li>
+                    {
+                        user && <li><NavLink to={'/my-reviews'}>My Review</NavLink></li>
+                    }
+                </ul>
+            </NavLink>
+        </li>
         <li><NavLink className={'rounded-md'} to={'blogs'}>Blogs</NavLink></li>
-        {admin && <li><NavLink className={'rounded-md'} to={'dashboard'}>Dashboard</NavLink></li>}
-        <li><NavLink className={'rounded-md'} to={'login'}>Login</NavLink></li>
+        {
+            user && <li><NavLink className={'rounded-md'} to={'dashboard'}>Dashboard</NavLink></li>
+        }
+        <li>
+            {
+                user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link to={'login'}>Login</Link>
+            }
+        </li>
 
         <label className="swap swap-rotate">
             <input onClick={() => setDark(!dark)} type={"checkbox"} />
@@ -42,7 +63,7 @@ const Navbar = ({ children }) => {
                         {pathname.includes("dashboard") && (
                             <label
                                 htmlFor="my-drawer-2"
-                                tabindex="0"
+                                tabIndex="0"
                                 className="btn btn-ghost lg:hidden"
                             >
                                 <svg
@@ -53,9 +74,9 @@ const Navbar = ({ children }) => {
                                     stroke="currentColor"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        stroke-lidth="2"
                                         d="M4 6h16M4 12h16M4 18h7"
                                     />
                                 </svg>

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Laptop Keyboard",
+    "price": 500,
+    "quantity": 500,
+    "description": "Very good quality laptop Keyboard and many kind of keyboard find here",
+    "origin": "Origin of Thailand",
+    "image": "https://i.ibb.co/CWHys01/LAPTOP-KEYBOARD.png"
+  },
+  {
+    "name": "Wireless Keyboard & Mouse",
+    "price": 500,
+    "quantity": 500,
+    "description": "Very good quality Keyboard and Mouse. May hope it is your first choose",
+    "origin": "Origin of China",
+    "image": "https://i.ibb.co/pnrjB2S/wireless-mouse-keyboard.png"
+  },
+  {
+    "name": "Casing",
+    "price": 600,
+    "quantity": 300,
+    "description": "Personal Computer casing. It is makes heavy metal",
+    "origin": "Origin of China",
+    "image": "https://i.ibb.co/NpggSkb/casing.jpg"
+  },
+  {
+    "name": "Laptop Speaker",
+    "price": 200,
+    "quantity": 600,
+    "description": "Laptop Speaker for any Manufacturer company.",
+    "origin": "Origin of China",
+    "image": "https://i.ibb.co/nD9FpNw/laptop-speaker.png"
+  },
+  {
+    "name": "Mouse",
+    "price": 150,
+    "quantity": 1000,
+    "description": "Good Quality Mouse for any Manufacturer company.",
+    "origin": "Origin of China",
+    "image": "https://i.ibb.co/YWWBBGq/mouse.png"
+  },
+  {
+    "name": "RJ-45 Connector",
+    "price": 2,
+    "quantity": 5000,
+    "description": "Networking any kind of office or house connect by this goods",
+    "origin": "Made in Bangladesh",
+    "image": "https://i.ibb.co/QHbd7CZ/RJ45-Connector.png"
+  }
+]

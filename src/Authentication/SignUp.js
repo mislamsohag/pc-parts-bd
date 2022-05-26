@@ -40,7 +40,7 @@ const SignUp = () => {
 
     if (token) {
         console.log(token)
-        navigate('/appointment');
+        navigate('/home');
     }
 
     const onSubmit = async data => {

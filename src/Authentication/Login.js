@@ -18,7 +18,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
+    console.log(user);
     //useToken Hooks
     const [token] = useToken(gUser || user);
 
@@ -53,18 +53,18 @@ const Login = () => {
     return (
         <>
             <div className='flex h-screen justify-center items-center'>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <h1 class="text-center text-3xl font-bold">Login now!</h1>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <h1 className="text-center text-3xl font-bold">Login now!</h1>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
                                 <input
                                     type="text"
                                     placeholder="email"
-                                    class="input input-bordered"
+                                    className="input input-bordered"
                                     {...register("email", {
 
                                         required: {
@@ -83,13 +83,13 @@ const Login = () => {
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
                                 </label>
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
                                 <input type="password"
                                     placeholder="password"
-                                    class="input input-bordered"
+                                    className="input input-bordered"
 
                                     {...register("password", {
 
@@ -116,7 +116,7 @@ const Login = () => {
 
                         <p className='text-center'><small>New to PC Parts BD? <Link to='/signup' className='text-blue-600'>Please Sign Up First!</Link></small></p>
 
-                        <div class="divider">OR</div>
+                        <div className="divider">OR</div>
                         <div className="card-actions justify-center">
                             <button onClick={() => signInWithGoogle()} className="btn btn-outline w-full max-w-xs">Continue with Google</button>
                         </div>
