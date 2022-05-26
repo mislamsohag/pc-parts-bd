@@ -7,6 +7,9 @@ import RequireAdmin from './Authentication/RequireAdmin';
 import { adminRoutes } from './Routes/adminRoutes';
 import Dashboard from './Dashboard/Dashboard';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -34,7 +37,7 @@ function App() {
           </Route>
         </Routes>
       </Navbar>
-
+      <ToastContainer />
     </>
   );
 }
