@@ -1,12 +1,13 @@
 
-
 import About from '../Pages/About';
 import Home from '../Pages/Home';
-import Reviews from '../Pages/Reviews';
 import Login from '../Authentication/Login';
 import Blogs from './../Pages/Blogs';
 import Products from '../Pages/Products/Products';
 import SignUp from './../Authentication/SignUp';
+import Reviews from '../Pages/Reviews/Reviews';
+
+
 
 export const publicRoutes = [
 
@@ -14,7 +15,7 @@ export const publicRoutes = [
     { path: '/home', name: 'Home', Component: Home },
     { path: '/products', name: 'Products', Component: Products },
     { path: '/about', name: 'About', Component: About },
-    { path: '/review', name: 'Reviews', Component: Reviews },
+    { path: '/reviews', name: 'Reviews', Component: Reviews },
     { path: '/blogs', name: 'Blogs', Component: Blogs },
     { path: '/login', name: 'Login', Component: Login },
     { path: '/signup', name: 'signUp', Component: SignUp },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Product = ({ product }) => {
+const Product = ({ product, setReviewModal }) => {
     // console.log(product);
     const { image, name, description, origin, price, quantity } = product;
     return (
@@ -26,7 +26,17 @@ const Product = ({ product }) => {
                         <p className='btn btn-outline btn-sm'>{origin}</p>
                     </div>
 
-                    <Link to={'/buy'} className="btn btn-primary">Order</Link>
+                    <div className='flex gap-5 mt-5'>
+                        <Link to={'/buy'} className="btn btn-sm btn-secondary uppercase bg-gradient-to-r from-primary to-secondary">Order</Link>
+
+                        <label
+                            htmlFor="review-modal"
+                            onClick={() => setReviewModal(product)}
+                            className="btn btn-sm btn-secondary bg-gradient-to-r from-secondary to-primary"
+                        >Rat. or Review</label>
+
+
+                    </div>
 
                 </div>
             </div>

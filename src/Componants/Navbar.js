@@ -26,9 +26,9 @@ const Navbar = ({ children }) => {
             <NavLink to={'reviews'} className={"dropdown dropdown-hover dropdown-end rounded-md"}>
                 <label tabIndex={"0"} >Reviews</label>
                 <ul tabIndex={"0"} className={"dropdown-content gap-2 menu shadow bg-base-100 rounded-lg w-52"}>
-                    <li><NavLink to={'/reviews'}>Reviews</NavLink></li>
+                    <li><NavLink to={'reviews'}>Reviews</NavLink></li>
                     {
-                        user && <li><NavLink to={'/my-reviews'}>My Review</NavLink></li>
+                        user && <li><NavLink to={'my-review'}>My Review</NavLink></li>
                     }
                 </ul>
             </NavLink>
