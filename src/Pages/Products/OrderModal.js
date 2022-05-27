@@ -8,7 +8,7 @@ import auth from '../../firebase.init';
 const OrderModal = ({ orderModal, setOrderModal }) => {
     const { _id, description, origin, price, quantity, image, name } = orderModal;
 
-    console.log(orderModal);
+    // console.log(orderModal);
 
     const [user] = useAuthState(auth);
 
@@ -16,14 +16,17 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
         event.preventDefault();
 
         const order = {
-            productId: _id,
-            productImage: image,
-            productPrice: price,
-            productName: name,
             userName: user.displayName,
             userEmail: user.email,
             phone: event.target.phone.value,
             address: event.target.comment.value,
+            productName: name,
+            _id,
+            image,
+            quantity,
+            description,
+            origin,
+            price,
         }
         console.log(order);
 
@@ -37,7 +40,7 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast(`Thanks for choise Our Product`)
+                    toast(`hello ${user.displayName}. Thanks for choising Our Product`)
                 }
                 else {
                     toast.error('Opps! Yor Order are not Plased. try again Please')
@@ -60,12 +63,26 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
 
                     <h3 className="font-bold text-center text-secondary text-lg">Product Name : {name}</h3>
 
+
                     <form onSubmit={handleOrder} className='grid grid-cols-1 gap-2 justify-items-center mt-2'>
 
-                        <p className="text-white">{description}</p>
-                        <p className="text-white">Price: {price}</p>
-                        <p className="text-white">Pakege: {quantity} /Pic </p>
-                        <p className="text-white">Product : {origin}</p>
+                        <p
+                            name='description'
+                            className="text-white text-center">{description}
+                        </p>
+                        <p
+                            name='price'
+                            className=" text-center text-secondary">Price: {price}
+                        </p>
+                        <p
+                            name='quantity'
+                            className="text-white text-center">Pakege: {quantity} /Pic
+                        </p>
+                        <p
+                            name='origin'
+                            className="text-secondary text-center">Product : {origin}
+                        </p>
+
 
                         <input
                             required

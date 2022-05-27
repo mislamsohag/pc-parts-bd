@@ -6,6 +6,7 @@ import Blogs from './../Pages/Blogs';
 import Products from '../Pages/Products/Products';
 import SignUp from './../Authentication/SignUp';
 import Reviews from '../Pages/Reviews/Reviews';
+import NotFound from '../Pages/Notfound';
 
 
 
@@ -18,5 +19,6 @@ export const publicRoutes = [
     { path: '/reviews', name: 'Reviews', Component: Reviews },
     { path: '/blogs', name: 'Blogs', Component: Blogs },
     { path: '/login', name: 'Login', Component: Login },
-    { path: '/signup', name: 'signUp', Component: SignUp },
+    { path: '/signup', name: 'SignUp', Component: SignUp },
+    { path: '*', name: 'Notfound', Component: NotFound },
 ];

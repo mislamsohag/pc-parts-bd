@@ -1,70 +1,38 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with PC | Parts | BD Site
 
-## Available Scripts
+# PC | Parts | BD Client Site Git Link: [https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mislamsohag](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mislamsohag)
 
-In the project directory, you can run:
+# PC | Parts | BD Server Git Link: [https://github.com/programming-hero-web-course1/manufacturer-website-server-side-mislamsohag.git](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-mislamsohag.git)
 
-### `npm start`
+# PC | Parts | BD Firebase Live site Link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This This is My PC | Parts | BD Live site Link [https://pcpartsbd-f68f9.web.app/ )
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Heroku Server Link: [https://mighty-tor-21117.herokuapp.com ]
 
-### `npm test`
+### `Work History`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* At first `Site Name` selected.
+
+* Then create `Home page` route.
+
+* It also very difficult thinking How can i do or what can i do this full stack Website. It's very fristing and very difficult thingking what do i do! then i create one by by successfully my simple project. I Cordial a lot of Thanks Mr. Jhangkar Mahabub sir and also Thanks Programming Hero Team.
+
+* `Tailwindcss` Install 
+* `React Bootstrap` Install 
+* `Routes and Route` Set 
+* `Private Route, Admin Route, and Public Routes` Set 
+* `Nested Routes set under Dashbord` Set 
+* `Firebase Authentication` Set 
+* `MongoDB` Set 
+* `JWT Emplementation` Set 
+* I also folowing Requirment
+
+* See the section about [deployment](https://pcpartsbd-f68f9.web.app/) for more information.
 
 ### `npm run build`
+### `firebase deploy`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+** At last `Good By and say Allah Hafeez` **
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
