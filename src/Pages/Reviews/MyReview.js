@@ -2,20 +2,51 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../../Componants/Footer';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 
 const MyReview = () => {
     const [user] = useAuthState(auth);
     const [myReview, setMyReview] = useState([]);
+    const navigate = useNavigate()
+
+
+    // useEffect(() => {
+    //     if (user) {
+    //         fetch(`http://localhost:5000/review?userEmail=${user.email}`,
+
+    //         )
+    //             .then(res => res.json())
+    //             .then(data => setMyReview(data))
+    //     }
+    // }, [user])
+
+    // console.log(myReview);
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/review?userEmail=${user.email}`)
-                .then(res => res.json())
-                .then(data => setMyReview(data))
+            fetch(`http://localhost:5000/review?userEmail=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json()
+                })
+                .then(data => {
+
+                    setMyReview(data);
+                });
         }
     }, [user])
 
-    // console.log(myReview);
 
     return (
         <div>
