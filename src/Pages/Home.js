@@ -1,14 +1,13 @@
 import React from 'react';
 import Slider from '../Componants/Slider';
-import { Link } from 'react-router-dom';
 import Footer from '../Componants/Footer';
+import Products from './Products/Products';
 
 const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <h1 className="text-5xl">এখানে বিজনেস সামারী দেখাবো</h1>
-            <Footer></Footer>
+            <Products></Products>
         </div>
     );
 };

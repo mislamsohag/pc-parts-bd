@@ -30,7 +30,7 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
         }
         console.log(order);
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://mighty-tor-21117.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

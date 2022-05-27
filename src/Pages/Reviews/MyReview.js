@@ -13,7 +13,7 @@ const MyReview = () => {
 
     // useEffect(() => {
     //     if (user) {
-    //         fetch(`http://localhost:5000/review?userEmail=${user.email}`,
+    //         fetch(`https://mighty-tor-21117.herokuapp.com/review?userEmail=${user.email}`,
 
     //         )
     //             .then(res => res.json())
@@ -25,7 +25,7 @@ const MyReview = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/review?userEmail=${user.email}`, {
+            fetch(`https://mighty-tor-21117.herokuapp.com/review?userEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
