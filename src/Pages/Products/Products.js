@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReviewModal from '../Reviews/ReviewModal';
 import Product from './Product';
+import Loading from '../../Componants/Loading';
+import { useQuery } from 'react-query';
+import OrderModal from './OrderModal';
+import Footer from './../../Componants/Footer';
+
+
+
 
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    // console.log(products);
 
     const [reviewModal, setReviewModal] = useState([]);
+    const [orderModal, setOrderModal] = useState([]);
+    // console.log(reviewModal);
+    // console.log(orderModal);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, [])
+    const { data: products, isLoading } = useQuery('product', () => fetch('http://localhost:5000/product')
+        .then(res => res.json()))
 
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>
@@ -24,8 +32,11 @@ const Products = () => {
                         key={product._id}
                         product={product}
                         setReviewModal={setReviewModal}
+                        setOrderModal={setOrderModal}
                     ></Product>)
                 }
+
+                {/* Modal Open for Rating */}
                 {
                     reviewModal &&
                     <ReviewModal
@@ -34,7 +45,18 @@ const Products = () => {
                     >
                     </ReviewModal>
                 }
+
+                {/* Modal Open for Order */}
+                {
+                    orderModal &&
+                    <OrderModal
+                        orderModal={orderModal}
+                        setOrderModal={setOrderModal}
+                    >
+                    </OrderModal>
+                }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

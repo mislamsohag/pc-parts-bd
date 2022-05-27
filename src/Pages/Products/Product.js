@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Product = ({ product, setReviewModal }) => {
+
+const Product = ({ product, setReviewModal, setOrderModal }) => {
+
     // console.log(product);
     const { image, name, description, origin, price, quantity } = product;
     return (
         <div>
             <div className="card lg:max-w-lg bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img src={image} alt="Shoes" className="rounded-xl" />
+                    <img src={image} alt="produt image" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
@@ -27,7 +28,12 @@ const Product = ({ product, setReviewModal }) => {
                     </div>
 
                     <div className='flex gap-5 mt-5'>
-                        <Link to={'/buy'} className="btn btn-sm btn-secondary uppercase bg-gradient-to-r from-primary to-secondary">Order</Link>
+
+                        <label
+                            htmlFor="order-modal"
+                            onClick={() => setOrderModal(product)}
+                            className="btn btn-sm btn-secondary bg-gradient-to-r from-secondary to-primary"
+                        >Order Place</label>
 
                         <label
                             htmlFor="review-modal"
