@@ -1,10 +1,10 @@
 
-import AddAdmin from '../Dashboard/AddAdmin';
 import AddProduct from '../Dashboard/AddProduct';
+import AllUsers from '../Dashboard/AllUsers';
 
 
 export const adminRoutes = [
 
-    { path: '/dashboard/addAdmin', name: 'Dashboard', Component: AddAdmin },
-    { path: '/dashboard/addProduct', name: 'Dashboard', Component: AddProduct },
+    { path: '/dashboard/allusers', name: 'AllUsers', Component: AllUsers },
+    { path: '/dashboard/addProduct', name: 'AddProduct', Component: AddProduct },
 ];

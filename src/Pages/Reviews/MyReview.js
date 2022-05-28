@@ -86,7 +86,6 @@ const MyReview = () => {
                                 </td>
                             </tr>)
                         }
-
                     </tbody>
                 </table>
             </div>

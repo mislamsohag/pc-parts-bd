@@ -1,21 +1,22 @@
 import React from 'react';
-// import auth from '../../firebase.init';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import Loading from '../../Sheard/Loading';
+import auth from './../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import Loading from '../Componants/Loading';
 import useAdmin from '../Hooks/useAdmin';
+import { signOut } from 'firebase/auth';
 
 const RequireAdmin = () => {
-
-    const [admin] = useAdmin();// এটা সাময়িক সময়ের জন্য তৈরি
+    const [user, loading] = useAuthState(auth);
+    const [admin, adminLoading] = useAdmin(user);
     const location = useLocation();
 
-    // const [admin, loading] = useAuthState(auth);
-    // if (loading) {
-    //     return <Loading></Loading>
-    // }
+    if (loading || adminLoading) {
+        return <Loading></Loading>
+    }
 
-    if (!admin) {
+    if (!user || !admin) {
+        signOut(auth);
         return <Navigate to='/login' state={{ from: location }} replace></Navigate>
     }
 

@@ -12,7 +12,7 @@ const DashboardSidebar = ({ children }) => {
                 className="drawer-toggle"
             />
 
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content flex flex-col mx-12 my-5">
                 {/* <!-- Page content here --> */}
                 {children}
             </div>
@@ -23,8 +23,9 @@ const DashboardSidebar = ({ children }) => {
                 </label>
                 <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content gap-2">
                     {/* <!-- Sidebar content here --> */}
-                    <li><NavLink to="/dashboard/addAdmin">Add Admin</NavLink></li>
+                    <li><NavLink to="allusers">All Users</NavLink></li>
                     <li><NavLink to="/dashboard/addProduct">Add Product</NavLink></li>
+
 
                 </ul>
 

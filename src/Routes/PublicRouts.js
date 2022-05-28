@@ -7,6 +7,7 @@ import Products from '../Pages/Products/Products';
 import SignUp from './../Authentication/SignUp';
 import Reviews from '../Pages/Reviews/Reviews';
 import NotFound from '../Pages/Notfound';
+import AllUsers from '../Dashboard/AllUsers';
 
 
 
