@@ -26,9 +26,9 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
 
             productPrice: price,
         }
-        console.log(order);
+        // console.log(order);
 
-        axios.post('http://localhost:5000/order', order)
+        axios.post('https://mighty-tor-21117.herokuapp.com/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -64,35 +64,23 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
                             value={user?.displayName}
                             name="name"
                             placeholder='name'
-                            readOnly disabled />
-                        <br />
+                            disabled />
 
                         <input
                             className='input input-bordered w-full max-w-xs'
                             type="email"
                             value={user?.email}
                             name="email"
-                            placeholder='email'
-                            readOnly disabled />
-                        <br />
-
-                        <input
-                            className='input input-bordered w-full max-w-xs'
-                            type="text"
-                            value={name}
-                            name="service"
-                            placeholder='service'
-                            readOnly />
-                        <br />
+                            disabled />
 
                         <textarea
                             className='input input-bordered w-full max-w-xs'
                             type="text"
                             name="address"
-                            placeholder='address'
+                            placeholder='Type your address'
                             autoComplete='off'
                             required ></textarea>
-                        <br />
+
 
                         <input
                             className='input input-bordered w-full max-w-xs'
@@ -100,7 +88,7 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
                             name="phone"
                             placeholder='phone'
                             required />
-                        <br />
+
 
                         <input className='btn btn-secondary w-full max-w-xs' type="submit" value="Place Order" />
                     </form>

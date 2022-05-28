@@ -25,9 +25,9 @@ const DashboardSidebar = ({ children }) => {
                     {/* <!-- Sidebar content here --> */}
 
                     {/* এডমিন হলেই কেবল ঢুকতে পারবে অন্যথায় নয় */}
-                    {
-                        admin && <li><NavLink to="allusers">All Users</NavLink></li>
-                    }
+
+                    <li><NavLink to="allusers">All Users</NavLink></li>
+
                     <li><NavLink to="/dashboard/addProduct">Add Product</NavLink></li>
 
 
