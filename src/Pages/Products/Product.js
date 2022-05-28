@@ -1,10 +1,11 @@
 import React from 'react';
 
 
+
 const Product = ({ product, setReviewModal, setOrderModal }) => {
 
     // console.log(product);
-    const { image, name, description, origin, price, quantity } = product;
+    const { image, name, description, price, quantity } = product;
     return (
         <div>
             <div className="card lg:max-w-lg bg-base-100 shadow-xl">
@@ -24,10 +25,12 @@ const Product = ({ product, setReviewModal, setOrderModal }) => {
                                 <option value="3">Pac: 3</option>
                             </select>
                         </p>
-                        <p className='btn btn-outline btn-sm'>{origin}</p>
+
                     </div>
 
                     <div className='flex gap-5 mt-5'>
+
+
 
                         <label
                             htmlFor="order-modal"

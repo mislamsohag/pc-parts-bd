@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const ReviewModal = ({ reviewModal, setReviewModal }) => {
     const { _id, image, name } = reviewModal;
 
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const handleReview = event => {
         event.preventDefault();
@@ -48,7 +48,7 @@ const ReviewModal = ({ reviewModal, setReviewModal }) => {
             <input type="checkbox" id="review-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <div class="w-16 rounded">
+                    <div className="w-16 rounded">
                         <img src={image} alt="product image" />
                     </div>
                     <label htmlFor="review-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>

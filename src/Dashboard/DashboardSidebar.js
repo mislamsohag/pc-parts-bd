@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import useAdmin from '../Hooks/useAdmin';
+import useAdmin from '../Hooks/useAdmin';
 
 const DashboardSidebar = ({ children }) => {
-    // const [admin] = useAdmin();
+    const [admin] = useAdmin();
     return (
         <div className="drawer drawer-mobile bg-accent">
             <input
@@ -23,7 +23,11 @@ const DashboardSidebar = ({ children }) => {
                 </label>
                 <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content gap-2">
                     {/* <!-- Sidebar content here --> */}
-                    <li><NavLink to="allusers">All Users</NavLink></li>
+
+                    {/* এডমিন হলেই কেবল ঢুকতে পারবে অন্যথায় নয় */}
+                    {
+                        admin && <li><NavLink to="allusers">All Users</NavLink></li>
+                    }
                     <li><NavLink to="/dashboard/addProduct">Add Product</NavLink></li>
 
 

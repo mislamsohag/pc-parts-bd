@@ -1,12 +1,12 @@
+import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
-
 const OrderModal = ({ orderModal, setOrderModal }) => {
-    const { _id, description, origin, price, quantity, image, name } = orderModal;
+    const { _id, price, image, name } = orderModal;
 
     // console.log(orderModal);
 
@@ -16,37 +16,30 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
         event.preventDefault();
 
         const order = {
-            userName: user.displayName,
             userEmail: user.email,
+            img: image,
+            product: name,
+            productId: _id,
+            user: user.displayName,
             phone: event.target.phone.value,
-            address: event.target.comment.value,
-            productName: name,
-            _id,
-            image,
-            quantity,
-            description,
-            origin,
-            price,
+            address: event.target.address.value,
+
+            productPrice: price,
         }
         console.log(order);
 
-        fetch('https://mighty-tor-21117.herokuapp.com/orders', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(order) //মূলত এই বডিকেই সার্ভার থেকে রিসিভ করবে
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
+        axios.post('http://localhost:5000/order', order)
+            .then(response => {
+                const { data } = response;
+                if (data.insertedId) {
                     toast(`hello ${user.displayName}. Thanks for choising Our Product`)
-                }
-                else {
+                    setOrderModal(null);
+                } else {
                     toast.error('Opps! Yor Order are not Plased. try again Please')
                 }
-                setOrderModal(null);
-            });
+            })
+
+
     };
 
     return (
@@ -63,46 +56,53 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
 
                     <h3 className="font-bold text-center text-secondary text-lg">Product Name : {name}</h3>
 
-
                     <form onSubmit={handleOrder} className='grid grid-cols-1 gap-2 justify-items-center mt-2'>
 
-                        <p
-                            name='description'
-                            className="text-white text-center">{description}
-                        </p>
-                        <p
-                            name='price'
-                            className=" text-center text-secondary">Price: {price}
-                        </p>
-                        <p
-                            name='quantity'
-                            className="text-white text-center">Pakege: {quantity} /Pic
-                        </p>
-                        <p
-                            name='origin'
-                            className="text-secondary text-center">Product : {origin}
-                        </p>
-
+                        <input
+                            className='input input-bordered w-full max-w-xs'
+                            type="text"
+                            value={user?.displayName}
+                            name="name"
+                            placeholder='name'
+                            readOnly disabled />
+                        <br />
 
                         <input
-                            required
-                            name='phone'
-                            type="number"
-                            placeholder="Mobile Number"
-                            className="input input-bordered w-full max-w-xs" />
+                            className='input input-bordered w-full max-w-xs'
+                            type="email"
+                            value={user?.email}
+                            name="email"
+                            placeholder='email'
+                            readOnly disabled />
+                        <br />
+
+                        <input
+                            className='input input-bordered w-full max-w-xs'
+                            type="text"
+                            value={name}
+                            name="service"
+                            placeholder='service'
+                            readOnly />
+                        <br />
 
                         <textarea
-                            required
-                            name='address'
+                            className='input input-bordered w-full max-w-xs'
                             type="text"
-                            placeholder="Type Delivery Address"
-                            className="textarea textarea-bordered w-full max-w-xs">
-                        </textarea>
+                            name="address"
+                            placeholder='address'
+                            autoComplete='off'
+                            required ></textarea>
+                        <br />
 
                         <input
-                            type="submit"
-                            value='Order Place'
-                            className="btn btn-secondary w-full max-w-xs" />
+                            className='input input-bordered w-full max-w-xs'
+                            type="text"
+                            name="phone"
+                            placeholder='phone'
+                            required />
+                        <br />
+
+                        <input className='btn btn-secondary w-full max-w-xs' type="submit" value="Place Order" />
                     </form>
                 </div>
             </div>
