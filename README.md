@@ -9,7 +9,7 @@
 
 This This is My PC | Parts | BD Live site Link [https://pcpartsbd-f68f9.web.app/ )
 
-* Heroku Server Link: [http://localhost:5000 ]
+* Heroku Server Link: [https://mighty-tor-21117.herokuapp.com ]
 
 ### `Work History`
 
