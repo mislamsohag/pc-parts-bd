@@ -28,7 +28,7 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
         }
         // console.log(order);
 
-        axios.post('https://mighty-tor-21117.herokuapp.com/order', order)
+        axios.post('http://localhost:5000/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -38,8 +38,6 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
                     toast.error('Opps! Yor Order are not Plased. try again Please')
                 }
             })
-
-
     };
 
     return (
