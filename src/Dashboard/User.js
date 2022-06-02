@@ -26,16 +26,39 @@ const User = ({ user, index, refetch }) => {
                     //যদি ‍এডমিন হয় তাহলে এই ম্যাসেজ দিব
                     toast.success('Admin has created')
                 }
-
             })
     }
+
+    //user ডিলিট করার জন্য
+    const handleDelete = () => {
+        fetch(`https://mighty-tor-21117.herokuapp.com/userDelete/${email}`, {
+            method: 'DELETE',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    window.confirm("Are you sure delete this user?")
+                    toast.success(`User is deleted.`)
+                    refetch();
+                }
+            })
+    }
+
+
     return (
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
             {/* যদি সে এডমিন হয় তাহলে তাকে এই বাটন দেখানো হবে */}
             <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
-            <td><button className="btn btn-xs">Delete User</button></td>
+
+            {/* <td><button className="btn btn-xs">Delete User</button></td> */}
+
+            <td><button onClick={() => handleDelete()} className="btn btn-xs">Delete User</button></td>
         </tr>
     );
 };
