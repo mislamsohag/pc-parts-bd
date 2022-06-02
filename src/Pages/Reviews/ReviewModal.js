@@ -24,7 +24,7 @@ const ReviewModal = ({ reviewModal, setReviewModal }) => {
         }
         // console.log(review);
 
-        fetch('https://mighty-tor-21117.herokuapp.com/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

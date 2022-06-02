@@ -34,7 +34,7 @@ const AddProduct = () => {
                     // console.log(product)
 
                     //Send Data to Database
-                    fetch('https://mighty-tor-21117.herokuapp.com/products', {
+                    fetch('http://localhost:5000/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

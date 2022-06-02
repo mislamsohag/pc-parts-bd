@@ -1,13 +1,13 @@
 import React from 'react';
 import Slider from '../Componants/Slider';
-import Footer from '../Componants/Footer';
-import Products from './Products/Products';
+
+import BussinessSummary from './BussinessSummary';
 
 const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <Products></Products>
+            <BussinessSummary></BussinessSummary>
         </div>
     );
 };

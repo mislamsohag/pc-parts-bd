@@ -7,7 +7,7 @@ const User = ({ user, index, refetch }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://mighty-tor-21117.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const User = ({ user, index, refetch }) => {
 
     //user ডিলিট করার জন্য
     const handleDelete = () => {
-        fetch(`https://mighty-tor-21117.herokuapp.com/userDelete/${email}`, {
+        fetch(`http://localhost:5000/userDelete/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

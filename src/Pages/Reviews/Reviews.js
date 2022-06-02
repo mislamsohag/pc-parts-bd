@@ -6,7 +6,7 @@ import Footer from '../../Componants/Footer';
 
 const Reviews = () => {
 
-    const { data: reviews, isLoading } = useQuery('review', () => fetch('https://mighty-tor-21117.herokuapp.com/reviews')
+    const { data: reviews, isLoading } = useQuery('review', () => fetch('http://localhost:5000/reviews')
         .then(res => res.json()))
 
     if (isLoading) {
