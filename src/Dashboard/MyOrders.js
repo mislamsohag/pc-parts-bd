@@ -8,6 +8,9 @@ import { signOut } from 'firebase/auth';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
+
+    console.log(user);
+
     const [myOrder, setMyOrder] = useState([]);
     const navigate = useNavigate()
     // console.log(myOrder);

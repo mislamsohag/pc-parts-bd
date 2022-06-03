@@ -2,14 +2,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { axios } from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
+    const [user] = useAuthState(auth);
     const imageStorageKey = '465767eb44e72bf0bd8233b09b8fb694';
 
     const onSubmit = async (data) => {
+        toast('Please Wait for Updated');
         const image = data.image[0]; //এখানে image কাজ করে কিন্তু img কাজ করেনা।
         // console.log(image);
         const formData = new FormData();
@@ -25,6 +27,7 @@ const AddProduct = () => {
                     const img = result.data.url;
 
                     const product = {
+                        userEmail: user.email,
                         image: img,
                         productName: data.pName,
                         productPrice: data.price,

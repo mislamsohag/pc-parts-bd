@@ -41,7 +41,6 @@ const MyReview = () => {
                     return res.json()
                 })
                 .then(data => {
-
                     setMyReview(data);
                 });
         }
