@@ -14,7 +14,7 @@ const MyProducts = () => {
     console.log(myProduct);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/my-products?userEmail=${user.email}`, {
+            fetch(` https://mighty-tor-21117.herokuapp.com/my-products?userEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

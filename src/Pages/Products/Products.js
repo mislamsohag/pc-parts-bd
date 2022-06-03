@@ -17,7 +17,7 @@ const Products = () => {
     // console.log(reviewModal);
     // console.log(orderModal);
 
-    const { data: products, isLoading } = useQuery('product', () => fetch('http://localhost:5000/product')
+    const { data: products, isLoading } = useQuery('product', () => fetch(' https://mighty-tor-21117.herokuapp.com/product')
         .then(res => res.json()))
 
     if (isLoading) {
