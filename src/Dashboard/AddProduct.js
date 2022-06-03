@@ -10,7 +10,7 @@ const AddProduct = () => {
     const imageStorageKey = '465767eb44e72bf0bd8233b09b8fb694';
 
     const onSubmit = async (data) => {
-        const image = data.image[0]; //এখানে image কাজ করে img কাজ করেনা
+        const image = data.image[0]; //এখানে image কাজ করে কিন্তু img কাজ করেনা।
         // console.log(image);
         const formData = new FormData();
         formData.append('image', image);
@@ -54,9 +54,8 @@ const AddProduct = () => {
     }
 
 
-
     return (
-        <div>
+        <div className='bg-accent h-screen'>
             <h3 className="font-bold text-center text-secondary text-lg">Product Add Fns</h3>
 
             <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 gap-2 justify-items-center mt-2'>
