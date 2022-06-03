@@ -49,7 +49,7 @@ const MyReview = () => {
 
 
     return (
-        <div>
+        <>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* <!-- head --> */}
@@ -69,10 +69,9 @@ const MyReview = () => {
 
                                 <td>
                                     <div className="flex items-center space-x-3">
-                                        <div className="P. Image">
-                                            <div className="mask mask-circle w-12 h-12">
-                                                <img src={review.productImg} alt="Avatar Tailwind CSS Component" />
-                                            </div>
+
+                                        <div className="mask mask-circle w-12 h-12">
+                                            <img src={review.productImg} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
                                 </td>
@@ -91,7 +90,7 @@ const MyReview = () => {
             </div>
 
             <Footer></Footer>
-        </div>
+        </>
     );
 };
 

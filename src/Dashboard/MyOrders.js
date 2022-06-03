@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [myOrder, setMyOrder] = useState([]);
     const navigate = useNavigate()
-
+    // console.log(myOrder);
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/my-orders?userEmail=${user.email}`, {
@@ -39,6 +39,44 @@ const MyOrders = () => {
     return (
         <div>
             <h2>My Orders Page : {myOrder.length}</h2>
+
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    {/* <!-- head --> */}
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Products</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Cansel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* <!-- row 1 --> */}
+                        {
+                            myOrder.map((order, index) => <tr key={index}>
+
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="mask mask-circle w-20 h-20">
+                                            <img src={order.img} alt="Avatar Tailwind CSS Component" />
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {order.product}
+                                </td>
+                                <td>{order.productPrice} Tk</td>
+                                <td><button className="btn btn-ghost btn-xs">Update</button></td>
+                                <td>
+                                    <button className="btn btn-ghost btn-xs">Delete</button>
+                                </td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
