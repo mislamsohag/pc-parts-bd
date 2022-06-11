@@ -8,7 +8,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(` https://mighty-tor-21117.herokuapp.com/user/${email}`, {
+            fetch(`https://mighty-tor-21117.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'applicatin/json'

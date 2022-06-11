@@ -8,7 +8,7 @@ import Loading from '../Componants/Loading';
 
 const BussinessSummary = () => {
 
-    const { data: products, isLoading } = useQuery('product', () => fetch(' https://mighty-tor-21117.herokuapp.com/product')
+    const { data: products, isLoading } = useQuery('product', () => fetch('https://mighty-tor-21117.herokuapp.com/product')
         .then(res => res.json()))
 
     if (isLoading) {
@@ -64,8 +64,8 @@ const BussinessSummary = () => {
                                 <div className="card card-compact w-60 bg-base-100 shadow-xl">
                                     <figure><img src={p.image} alt="image" /></figure>
                                     <div className="card-body">
-                                        <h2 className="card-title">{p.productName}</h2>
-                                        <p>{p.productDetails}</p>
+                                        <h2 className="card-title">{p.name}</h2>
+                                        <p>{p.details}</p>
                                         <div className="card-actions justify-center">
                                             <Link to="/products" className="btn btn-ghost text-blue-600">Buy Now</Link>
                                         </div>

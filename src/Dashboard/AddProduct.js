@@ -27,17 +27,17 @@ const AddProduct = () => {
                     const img = result.data.url;
 
                     const product = {
-                        userEmail: user.email,
+                        email: user.email,
                         image: img,
-                        productName: data.pName,
-                        productPrice: data.price,
-                        productDetails: data.details,
-                        productQuantity: data.quantity,
+                        name: data.pName,
+                        price: data.price,
+                        details: data.details,
+                        quantity: data.quantity,
                     }
                     // console.log(product)
 
                     //Send Data to Database
-                    fetch(' https://mighty-tor-21117.herokuapp.com/products', {
+                    fetch('https://mighty-tor-21117.herokuapp.com/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -14,17 +14,17 @@ const ReviewModal = ({ reviewModal, setReviewModal }) => {
 
         const review = {
             productId: _id,
-            productImg: image,
-            productName: name,
+            image: image,
+            name: name,
             userName: user.displayName,
-            userEmail: user.email,
+            email: user.email,
             phone: event.target.phone.value,
             comment: event.target.comment.value,
             rating: event.target.rating.value
         }
         // console.log(review);
 
-        fetch(' https://mighty-tor-21117.herokuapp.com/reviews', {
+        fetch('https://mighty-tor-21117.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -16,7 +16,7 @@ const MyOrders = () => {
     // console.log(myOrder);
     useEffect(() => {
         if (user) {
-            fetch(` https://mighty-tor-21117.herokuapp.com/my-orders?userEmail=${user.email}`, {
+            fetch(`https://mighty-tor-21117.herokuapp.com/my-orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -63,14 +63,14 @@ const MyOrders = () => {
                                 <td>
                                     <div className="flex items-center space-x-3">
                                         <div className="mask mask-circle w-20 h-20">
-                                            <img src={order.img} alt="Avatar Tailwind CSS Component" />
+                                            <img src={order.image} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    {order.product}
+                                    {order.name}
                                 </td>
-                                <td>{order.productPrice} Tk</td>
+                                <td>{order.price} Tk</td>
                                 <td><button className="btn btn-ghost btn-xs">Update</button></td>
                                 <td>
                                     <button className="btn btn-ghost btn-xs">Delete</button>

@@ -16,19 +16,18 @@ const OrderModal = ({ orderModal, setOrderModal }) => {
         event.preventDefault();
 
         const order = {
-            userEmail: user.email,
-            img: image,
-            product: name,
+            email: user.email,
+            image: image,
+            name: name,
             productId: _id,
             user: user.displayName,
             phone: event.target.phone.value,
             address: event.target.address.value,
-
-            productPrice: price,
+            price: price,
         }
         // console.log(order);
 
-        axios.post(' https://mighty-tor-21117.herokuapp.com/order', order)
+        axios.post('https://mighty-tor-21117.herokuapp.com/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

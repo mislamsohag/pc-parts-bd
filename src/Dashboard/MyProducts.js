@@ -11,10 +11,10 @@ const MyProducts = () => {
     const [user] = useAuthState(auth);
     const [myProduct, setMyProduct] = useState([]);
     const navigate = useNavigate()
-    console.log(myProduct);
+
     useEffect(() => {
         if (user) {
-            fetch(` https://mighty-tor-21117.herokuapp.com/my-products?userEmail=${user.email}`, {
+            fetch(`https://mighty-tor-21117.herokuapp.com/my-products?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,9 @@ const MyProducts = () => {
                     setMyProduct(data);
                 });
         }
-    }, [user])
+    }, [user]);
+
+    console.log(myProduct);
 
     return (
         <div>

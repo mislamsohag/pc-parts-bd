@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 
 const DashboardSidebar = ({ children }) => {
@@ -26,14 +26,12 @@ const DashboardSidebar = ({ children }) => {
 
                     {/* এডমিন হলেই কেবল ঢুকতে পারবে অন্যথায় নয় */}
                     <li><NavLink to="/dashboard/addProduct">Add Product</NavLink></li>
+                    <li><NavLink to="/dashboard/manage-products">Manage Products</NavLink></li>
                     <li><NavLink to="/dashboard/my-product">My Products</NavLink></li>
                     <li><NavLink to="/dashboard/my-orders">My Orders</NavLink></li>
                     <li><NavLink to="/dashboard/my-profile">My Profile</NavLink></li>
                     <li><NavLink to="allusers">All Users</NavLink></li>
-
-
                 </ul>
-
             </div>
         </div>
     );

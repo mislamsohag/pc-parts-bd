@@ -13,7 +13,7 @@ const MyReview = () => {
 
     // useEffect(() => {
     //     if (user) {
-    //         fetch(` https://mighty-tor-21117.herokuapp.com/review?userEmail=${user.email}`,
+    //         fetch(`https://mighty-tor-21117.herokuapp.com/review?userEmail=${user.email}`,
 
     //         )
     //             .then(res => res.json())
@@ -25,7 +25,7 @@ const MyReview = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(` https://mighty-tor-21117.herokuapp.com/review?userEmail=${user.email}`, {
+            fetch(`https://mighty-tor-21117.herokuapp.com/review?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -70,7 +70,7 @@ const MyReview = () => {
                                     <div className="flex items-center space-x-3">
 
                                         <div className="mask mask-circle w-12 h-12">
-                                            <img src={review.productImg} alt="Avatar Tailwind CSS Component" />
+                                            <img src={review.image} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
                                 </td>
