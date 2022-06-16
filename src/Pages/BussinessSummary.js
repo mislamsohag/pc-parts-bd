@@ -1,20 +1,20 @@
 import React from 'react';
-import { useQuery } from 'react-query';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import bg from '../Assets/Background.png';
-// import icon_1 from '../Assets/icon_1.jpg';
 import Footer from '../Componants/Footer';
-import Loading from '../Componants/Loading';
 
 const BussinessSummary = () => {
 
-    const { data: products, isLoading } = useQuery('product', () => fetch('https://mighty-tor-21117.herokuapp.com/product')
-        .then(res => res.json()))
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
-    const productsSclce = products.slice(4)
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch('https://mighty-tor-21117.herokuapp.com/product')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+    const productsSclce = products.slice(6)
     // console.log(productsSclce);
 
 
@@ -56,12 +56,12 @@ const BussinessSummary = () => {
 
             <div className='rounded-2xl mx-auto mt-[-50px] relative z-20 bg-gray-200 mb-5 shadow-lg p-10 w-5/6'>
                 <h1 className='text-2xl mb-5 text-secondary font-bold font-serif'>Find Our Product</h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 '>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 '>
 
                     {
                         productsSclce?.map(p => <>
-                            <div key={p._id} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-                                <div className="card card-compact w-60 bg-base-100 shadow-xl">
+                            <div key={p._id}>
+                                <div className="card card-compact w-50 bg-base-100 shadow-xl">
                                     <figure><img src={p.image} alt="image" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{p.name}</h2>
@@ -75,7 +75,7 @@ const BussinessSummary = () => {
                         </>)
                     }
                 </div>
-                <Link to="/products" className='btn btn-xs mt-5 justify-end'>See More...</Link>
+                <Link to="/products" className='btn btn-xs mt-5'>See More...</Link>
             </div>
 
             <Footer></Footer>
