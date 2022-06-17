@@ -17,9 +17,7 @@ const ManageProducts = () => {
     console.log(products);
 
     return (
-        <div>
-            This is Manage Products : {products.length}
-
+        <>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* <!-- head --> */}
@@ -27,8 +25,10 @@ const ManageProducts = () => {
                         <tr>
                             <th>Product Name</th>
                             <th>Description</th>
-                            <th>Favorite Color</th>
-                            <th></th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Origin</th>
+                            <th>Stutas</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,7 +65,7 @@ const ManageProducts = () => {
 
                 </table>
             </div>
-        </div>
+        </>
     );
 };
 
