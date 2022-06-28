@@ -24,12 +24,13 @@ const DashboardSidebar = ({ children }) => {
                 <ul className="menu p-2 overflow-y-auto w-60 bg-base-200 text-secondary font-thin font-serif gap-2">
                     {/* <!-- Sidebar content here --> */}
 
-                    {/* এডমিন হলেই কেবল ঢুকতে পারবে অন্যথায় নয় */}
                     <li><NavLink to="/dashboard/addProduct">Add Product</NavLink></li>
-                    <li><NavLink to="/dashboard/manage-products">Manage Products</NavLink></li>
                     <li><NavLink to="/dashboard/my-product">My Products</NavLink></li>
                     <li><NavLink to="/dashboard/my-orders">My Orders</NavLink></li>
                     <li><NavLink to="/dashboard/my-profile">My Profile</NavLink></li>
+                    <li><NavLink to="/dashboard/my-review">My Review</NavLink></li>
+                    {/* modify thies routes only for admin role এডমিন হলেই কেবল ঢুকতে পারবে অন্যথায় নয় */}
+                    <li><NavLink to="/dashboard/manage-products">Manage Products</NavLink></li>
                     <li><NavLink to="allusers">All Users</NavLink></li>
                 </ul>
             </div>

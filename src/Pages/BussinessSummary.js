@@ -14,7 +14,7 @@ const BussinessSummary = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-    const productsSclce = products.slice(6)
+    const productsSclce = products.slice(3, 6)
     // console.log(productsSclce);
 
 

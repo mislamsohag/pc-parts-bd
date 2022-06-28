@@ -6,8 +6,8 @@ const NotFound = () => {
     <section className='text-center'>
       <div className='row vh-50 my-5'>
         <div className='col-sm-12 col-md-6 col-lg-4 gap-3'>
-          <h1 className='text  text-red-600'>
-            Error 404
+          <h1 className='text-3xl font-extrabold text-red-600'>
+            Error! 404
           </h1>
           <h1 className='font-mono'>
             Ooops! You weren't supposed to de this looking for isn't here.

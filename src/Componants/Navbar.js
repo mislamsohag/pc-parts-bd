@@ -22,17 +22,18 @@ const Navbar = ({ children }) => {
         <li><NavLink className={'rounded-md'} to={'home'}>Home</NavLink></li>
         <li><NavLink className={'rounded-md'} to={'products'}>Products</NavLink></li>
         <li><NavLink className={'rounded-md'} to={'about'}>About</NavLink></li>
-        <li>
-            <NavLink to={'reviews'} className={"dropdown dropdown-hover dropdown-end rounded-md"}>
+        {/* <li>
+            <NavLink to={'reviews'} className={"dropdown dropdown-hover rounded"}>
                 <label tabIndex={"0"} >Reviews</label>
-                <ul tabIndex={"0"} className={"dropdown-content gap-2 menu shadow bg-base-100 rounded-lg w-52"}>
+                <ul tabIndex={"0"} className={"dropdown-content menu p-2 shadow bg-base-100 rounded-box w-28"}>
                     <li><NavLink to={'reviews'}>Reviews</NavLink></li>
                     {
                         user && <li><NavLink to={'my-review'}>My Review</NavLink></li>
                     }
                 </ul>
             </NavLink>
-        </li>
+        </li> */}
+        <li><NavLink className={'rounded-md'} to={'reviews'}>Reviews</NavLink></li>
         <li><NavLink className={'rounded-md'} to={'blogs'}>Blogs</NavLink></li>
         {
             user && <li><NavLink className={'rounded-md'} to={'dashboard'}>Dashboard</NavLink></li>
